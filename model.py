@@ -42,9 +42,13 @@ training_set = train_datagen.flow_from_directory('training_data',
                                                  class_mode = 'binary')
 
 model.fit_generator(training_set,
-                         steps_per_epoch = 8000,
-                         epochs = 25,
-                         validation_steps = 2000)
+                         steps_per_epoch = 100,
+                         epochs = 10,
+                         validation_steps = 50)
+
+# steps_per_epoch = 8000,
+# epochs = 25,
+# validation_steps = 2000)
 
 model_json = model.to_json()
 with open("./model.json","w") as json_file:

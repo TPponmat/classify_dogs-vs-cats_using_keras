@@ -1,3 +1,5 @@
+import os
+os.getcwd()
 from keras.models import model_from_json
 import cv2
 import numpy as np
@@ -17,9 +19,13 @@ print("Loaded model from disk")
 '''
 loaded_model.compile(optimizer = 'adam', loss = 'binary_crossentropy', metrics = ['accuracy'])
 
-img = cv2.imread("./dogs_cates/test/21.jpg")
+
+
+img = cv2.imread("/Users/tpponmat/Desktop/ML/catdog/classify_dogs-vs-cats_using_keras/training_data/dog/anon.43.png")
+
+
+
 img = cv2.resize(img, (50,50))
-print(img.shape)
 img = img.reshape(1, 50, 50, 3)
 
 print(img.shape)
